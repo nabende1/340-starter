@@ -201,6 +201,63 @@
   font-style: italic;
 }
 
+/* Styles for the inventory grid */
+#inv-display {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+#inv-display li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Vehicle thumbnails */
+#inv-display img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+#inv-display a {
+  text-decoration: none;
+  color: #333;
+}
+
+#inv-display a:hover {
+  color: #007bff;
+}
+
+.namePrice {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.namePrice h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.namePrice span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745; /* Green color for price */
+}
+
 /* Media Queries */
 @media (min-width: 767px) {
   .container {
