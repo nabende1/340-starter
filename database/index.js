@@ -1,23 +1,20 @@
 const { Pool } = require("pg");
-require("dotenv").config();
 
-// Configure connection pool with SSL for all environments
+// Render requires SSL unconditionally - simplify configuration
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === "production" 
-    ? { rejectUnauthorized: false }  // Required for Render PostgreSQL
-    : { rejectUnauthorized: false }, // Optional for local dev (safe to keep)
+  ssl: { rejectUnauthorized: false }, // Force SSL for ALL environments
 });
 
-// Optional: Log queries in development mode
-if (process.env.NODE_ENV === "development") {
-  pool.on("connect", () => {
+// Optional: Add connection logging for debugging
+pool.on("connect", () => {
+  if (process.env.NODE_ENV === "development") {
     console.log("Connected to PostgreSQL database");
-  });
+  }
+});
 
-  pool.on("query", (query) => {
-    console.log("Executed query:", query.text);
-  });
-}
+pool.on("error", (err) => {
+  console.error("Database connection error:", err);
+});
 
-module.exports = pool; // Consistent export for all environments
+module.exports = pool;
