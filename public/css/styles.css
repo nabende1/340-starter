@@ -258,6 +258,96 @@
   color: #28a745; /* Green color for price */
 }
 
+.vehicle-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: flex-start;
+}
+
+.vehicle-detail .vehicle-image {
+  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.vehicle-detail .vehicle-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.vehicle-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-info p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+/* === Error Page Styling === */
+body.error-page {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/images/error-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.error-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 10vh auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.error-container h1 {
+  font-size: 2.5rem;
+  color: #c0392b;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.error-container a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #2980b9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.error-container a:hover {
+  background-color: #1c5980;
+}
+
+@media (min-width: 768px) {
+  .vehicle-detail {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767px) {
+  .vehicle-detail {
+    flex-direction: column;
+  }
+}
+
+
 /* Media Queries */
 @media (min-width: 767px) {
   .container {
