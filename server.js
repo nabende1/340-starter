@@ -20,7 +20,7 @@ const inventoryRoute = require("./routes/inventoryRoute");
  *************************/
 app.set("view engine", "ejs");
 app.use(expressLayouts);
-app.set("layout", "./layouts/layout"); // not at views root
+app.set("layout", "./layouts/layout"); // Default layout
 
 /* ***********************
  * Middleware and Static Files
@@ -62,7 +62,7 @@ app.use(async (err, req, res, next) => {
   });
 });
 
-// 404 handler (must be after all other routes)
+// 404 handler 
 app.use(async (req, res) => {
   let nav = await utilities.getNav();
   res.status(404).render("errors/error", {

@@ -255,7 +255,7 @@
 .namePrice span {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #28a745; /* Green color for price */
+  color: #003366; /*color for price */
 }
 
 .vehicle-detail {
@@ -347,8 +347,6 @@ body.error-page {
   }
 }
 
-
-/* Media Queries */
 @media (min-width: 767px) {
   .container {
     height: 50vh;
